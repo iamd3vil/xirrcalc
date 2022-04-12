@@ -1,9 +1,9 @@
-name: Publish
+name: publish
 
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   publish:
@@ -32,7 +32,7 @@ jobs:
             asset_name: xirrcalc-macos
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
 
     - uses: actions-rs/toolchain@v1
       with:
@@ -43,7 +43,7 @@ jobs:
       run: cargo build --release --locked
 
     - name: Upload binaries to release
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.0.0
       with:
         name: ${{ matrix.asset_name }}
         path: ${{ matrix.artifact_name }}
