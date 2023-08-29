@@ -1,4 +1,4 @@
-name: publish
+name: build
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  publish:
+  build:
     name: Publish for ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -47,3 +47,4 @@ jobs:
       with:
         name: ${{ matrix.asset_name }}
         path: ${{ matrix.artifact_name }}
+
