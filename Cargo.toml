@@ -10,7 +10,3 @@ csv = "1.1"
 xirr = "0.2"
 chrono = "0.4"
 criterion = "0.3.6"
-
-[[bench]]
-name = "xirr_benchmark"
-harness = false
